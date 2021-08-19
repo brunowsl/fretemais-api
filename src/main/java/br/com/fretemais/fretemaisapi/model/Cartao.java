@@ -14,7 +14,7 @@ import lombok.Data;
 public class Cartao {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cartaoId;
 	private Integer numero;
 	private Integer cvc;
