@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.fretemais.fretemaisapi.model.Usuario;
 import br.com.fretemais.fretemaisapi.repository.UsuarioRepository;
+import br.com.fretemais.fretemaisapi.service.UsuarioService;
 
 @Controller
 @RequestMapping("/usuario")
@@ -22,6 +23,9 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioRepository repo;
+
+	@Autowired
+	private UsuarioService service;
 
 	@ResponseBody
 	@GetMapping(value = "/{usuarioId}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -38,7 +42,7 @@ public class UsuarioController {
 
 	@PostMapping("/add")
 	public ResponseEntity<Usuario> criarRemessa(@RequestBody Usuario usuario) {
-		Usuario novoUsuario = repo.save(usuario);
+		Usuario novoUsuario = service.salvar(usuario);
 		return ResponseEntity.ok(novoUsuario);
 	}
 

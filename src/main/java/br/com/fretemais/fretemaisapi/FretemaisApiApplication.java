@@ -2,10 +2,9 @@ package br.com.fretemais.fretemaisapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
-import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
-
-@SpringBootApplication
+@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 public class FretemaisApiApplication {
 
 	public static void main(String[] args) {

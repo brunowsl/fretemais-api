@@ -2,13 +2,13 @@ package br.com.fretemais.fretemaisapi.model;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.Data;
-
 
 @Entity
 @Data
@@ -22,10 +22,12 @@ public class Usuario {
 	private Integer diaNascimento;
 	private Integer mesNascimento;
 	private Integer anoNascimento;
+	@Column(unique = true)
 	private String email;
 	private String senha;
 	private String cpf;
 	private String telefone;
 	private LocalDateTime dtCriacao;
+	private String firebaseUId;
 
 }
