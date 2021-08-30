@@ -35,13 +35,13 @@ public class UsuarioController {
 	}
 
 	@GetMapping
-	public ResponseEntity<List<Usuario>> listaTodos() {
+	public ResponseEntity<List<Usuario>> listarTodos() {
 		List<Usuario> usuarios = repo.findAll();
 		return ResponseEntity.ok(usuarios);
 	}
 
 	@PostMapping("/add")
-	public ResponseEntity<Usuario> criarRemessa(@RequestBody Usuario usuario) {
+	public ResponseEntity<Usuario> salvarUsuario(@RequestBody Usuario usuario) {
 		Usuario novoUsuario = service.salvar(usuario);
 		return ResponseEntity.ok(novoUsuario);
 	}
