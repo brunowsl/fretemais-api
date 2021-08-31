@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.fretemais.fretemaisapi.model.Cartao;
-import br.com.fretemais.fretemaisapi.model.Usuario;
 import br.com.fretemais.fretemaisapi.repository.CartaoRepository;
 import br.com.fretemais.fretemaisapi.service.CartaoService;
 

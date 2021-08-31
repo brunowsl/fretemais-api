@@ -33,6 +33,13 @@ public class UsuarioController {
 		Usuario usuario = repo.findById(usuarioId).get();
 		return ResponseEntity.ok(usuario);
 	}
+	
+	@ResponseBody
+	@GetMapping(value = "/uid/{usuarioUId}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Usuario> findByUId(@PathVariable String usuarioUId) {
+		Usuario usuario = repo.findUsuarioByFirebaseUId(usuarioUId);
+		return ResponseEntity.ok(usuario);
+	}
 
 	@GetMapping
 	public ResponseEntity<List<Usuario>> listarTodos() {
@@ -45,5 +52,7 @@ public class UsuarioController {
 		Usuario novoUsuario = service.salvar(usuario);
 		return ResponseEntity.ok(novoUsuario);
 	}
+	
+	
 
 }
