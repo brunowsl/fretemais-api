@@ -16,12 +16,11 @@ public class Cartao {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cartaoId;
-	private Integer numero;
+	private String numero;
 	private Integer cvc;
-	private Integer codigoSeguranca;
-	private Integer diaExpiracao;
 	private Integer mesExpiracao;
-	private Integer nomeProprietario;
+	private Integer anoExpiracao;
+	private String nomeProprietario;
 	private String bandeira;
 	private String junoHash;
 
